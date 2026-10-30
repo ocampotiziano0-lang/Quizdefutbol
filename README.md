@@ -213,18 +213,22 @@ else finish();
 }
 
 function finish(){
-if(clock)clearInterval(clock);
-document.getElementById("game").style.display="none";
-document.getElementById("result").style.display="block";
-document.getElementById("final").textContent=score+" puntos";
-document.getElementById("message").textContent=
-score===500?"¡INCREÍBLE! Sos una leyenda 🐐":
-score>=300?"¡Muy buen jugador! ⚽":"¡Seguí practicando! 🔥";
-if(score>record){
-record=score;
-localStorage.setItem("quizRecord",record);
-document.getElementById("record").textContent=record;
-}
+  if(clock) clearInterval(clock);
+
+  document.getElementById("game").style.display="none";
+  document.getElementById("result").style.display="block";
+  document.getElementById("final").textContent=score+" puntos";
+
+  document.getElementById("message").textContent=
+    score===500 ? "¡INCREÍBLE! Sos una leyenda 🐐" :
+    score>=300 ? "¡Muy buen jugador! ⚽" :
+    "¡Seguí practicando! 🔥";
+
+  if(score>record){
+    record=score;
+    localStorage.setItem("quizRecord",record);
+    document.getElementById("record").textContent=record;
+  }
 }
 
 function home(){
